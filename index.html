@@ -1,24 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.goat1000.com/tagcanvas-example.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>CV</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jQWCloudv3.4.1.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
-<!doctype html>
-<html>
-  <head>
-    <title>Site Maintenance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--[if lt IE 9]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <script src="./TagCanvas example_files/tagcanvas.min.js.download" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        try {
+          TagCanvas.Start('myCanvas','tags',{
+            textColour: null,
+            weight: true,
+            reverse: true,
+            depth: 0.1,
+            maxSpeed: 0.01,
+            initial: [0.1, 0.1],
+            lock: "xy",
+            freezeActive: true,
+            outlineMethod: "none",
+            wheelZoom: false
+            
+          });
+        } catch(e) {
+          // something went wrong, hide the canvas container
+          document.getElementById('myCanvasContainer').style.display = 'none';
+        }
+      };
+     
+      $("#wordCloud").jQWCloud({
+  words: myData
+});
+
+    </script>
     <style>
-      body { text-align: center; padding: 150px; }
-      h1 { font-size: 50px; }
-      body { font: 20px Helvetica, sans-serif; color: #333; }
-      article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-      a { color: #dc8100; text-decoration: none; }
-      a:hover { color: #333; text-decoration: none; }
+      :root{
+          --personal-color: #D6D5C9;
+          --personal-contrast: #A22C29;
+          --personal-dark: #0A100D;
+          --personal-light: #B9BAA3;
+      }
+
+      li{color:#B9BAA3;}
+      .prova:hover{background-color: yellow;}
+      #wordCloud{
+        height: 478px;
+        width: 700px;
+    }
     </style>
   </head>
   <body>
-    <article>
-        <h1>We&rsquo;ll be back soon!</h1>
-        <div>
-            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.</p>
-            <p>&mdash; Lorenzo Pezzi</p>
+   <section class="min-vh-100 d-flex align-items-center" style="background-color: #A22C29;">
+     <div class="row w-100 d-flex justify-content-center ">
+      <div class="display-3 text-center text-white">TRY 1</div>
+       <div class="col-lg-8 text-center">
+        <div id="myCanvasContainer">
+          <canvas id="myCanvas" width="600" height="500">
+            <p>Anything in here will be replaced on browsers that support the canvas element</p>
+          </canvas>
         </div>
-    </article>
-    </body
-    </html>
+        <div id="tags" style="display: none;">
+          <ul>
+            <li><a href="" class="prova" style="color: #0A100D; font-size: 40px;">Database</a></li>
+            <li><a href="" style="color: #0A100D; font-size: 40px;">ER Model</a></li>
+            <li><a href="" style="color: #D6D5C9; font-size: 40px;" class="prova" >Java</a></li>
+            <li><a href="" style="color: white; font-size: 35px;">Javascript</a></li>
+            <li><a href="" style="color: white; font-size: 25px;">Python</a></li>
+            <li><a href="" style="color: #B9BAA3; font-size: 40px;">HTML</a></li>
+            <li><a href="" style="color: #B9BAA3; font-size: 40px;">CSS</a></li>
+            <li><a href="" style="color: #B9BAA3; font-size: 30px;">MVC</a></li>
+            <li><a href="" style="color: #B9BAA3; font-size: 40px;">Bootstrap</a></li>
+            <li><a href="" style="color: #0A100D; font-size: 40px;">SQL</a></li>
+            <li><a href="" class="prova" style="color: #0A100D; font-size: 40px;">Database</a></li>
+            <li><a href="" style="color: #0A100D; font-size: 40px;">ER Model</a></li>
+            <li><a href="" style="color: #D6D5C9; font-size: 40px;" class="prova" >Java</a></li>
+            <li><a href="" style="color: white; font-size: 35px;">Javascript</a></li>
+            <li><a href="" style="color: white; font-size: 25px;">Python</a></li>
+
+          </ul>
+        </div>
+       </div>
+    </div>
+  </section>
+
+  <section class="min-vh-100 d-flex align-items-center" style="background-color: black;">
+   
+    <div class="row w-100 d-flex justify-content-center">
+      <p class="display-3 text-center text-white">TRY 2</p>
+      <div class="col-lg-8 d-flex justify-content-center">
+       <div id="wordCloud"></div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body></html>
