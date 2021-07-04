@@ -50,6 +50,10 @@
         height: 478px;
         width: 700px;
     }
+        .canv{width: 40vw;}
+    @media screen and (max-width: 600px) {
+      .canv{width: 60vh;}
+    }
     </style>
   </head>
   <body>
@@ -58,7 +62,7 @@
       <div class="display-3 text-center text-white">TRY 1</div>
        <div class="col-lg-8 text-center">
         <div id="myCanvasContainer">
-          <canvas id="myCanvas" width="600" height="500">
+          <canvas id="myCanvas" width="500" class="canv" height="500">
             <p>Anything in here will be replaced on browsers that support the canvas element</p>
           </canvas>
         </div>
