@@ -52,20 +52,16 @@
         width: 700px;
     }
 
-    .canv{overflow: visible; background-color: yellow; padding: 10px;}
-    @media screen and (max-width: 600px) {
-      .canv{width: 100vw;}
-      .pr{width: 100%; height: 100%;}
-    }
+
     </style>
   </head>
   <body>
    <section class="min-vh-100 d-flex align-items-center" style="background-color: #A22C29;">
-     <div class="row w-100 d-flex justify-content-center ">
+     <div class="row w-100 d-flex justify-content-center min-vh-100">
       <div class="display-3 text-center text-white">TRY 1</div>
        <div class="col-lg-8 text-center">
-        <div id="myCanvasContainer" class="pr">
-          <canvas id="myCanvas" width="800" class="canv" height="500">
+        <div id="myCanvasContainer">
+          <canvas id="myCanvas" width="800" height="500">
             <p>Anything in here will be replaced on browsers that support the canvas element</p>
           </canvas>
         </div>
@@ -102,6 +98,14 @@
       </div>
     </div>
   </section>
+
+  <script>
+      let intViewportWidth = window.innerWidth;
+      let intViewportHeight = window.innerHeight;
+      document.getElementById('myCanvas').width = intViewportWidth/2;
+      document.getElementById('myCanvas').height = intViewportHeight;
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body></html>
