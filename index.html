@@ -1,111 +1,248 @@
-<!DOCTYPE html>
-<!-- saved from url=(0047)https://www.goat1000.com/tagcanvas-example.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title>CV</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/jQWCloudv3.4.1.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+<!doctype html>
+<html lang="en">
+  <head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--[if lt IE 9]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-    <script src="js/tagcanvas.min.js.download" type="text/javascript"></script>
-    <script type="text/javascript">
-      window.onload = function() {
-        try {
-          TagCanvas.Start('myCanvas','tags',{
-            textColour: null,
-            weight: true,
-            reverse: true,
-            depth: 0.1,
-            maxSpeed: 0.01,
-            initial: [0.1, 0.1],
-            lock: "xy",
-            freezeActive: true,
-            outlineMethod: "none",
-            wheelZoom: false,
-            stretchX: 1
-            
-          });
-        } catch(e) {
-          // something went wrong, hide the canvas container
-          document.getElementById('myCanvasContainer').style.display = 'none';
-        }
-      };
-     
-      $("#wordCloud").jQWCloud({
-  words: myData
-});
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Lorenzo Pezzi">
+    <meta name="description" content="FullStack Developer">
 
-    </script>
-    <style>
-      :root{
-          --personal-color: #D6D5C9;
-          --personal-contrast: #A22C29;
-          --personal-dark: #0A100D;
-          --personal-light: #B9BAA3;
-      }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
+        integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>Lorenzo Pezzi</title>
 
-      li{color:#B9BAA3;}
-      .prova:hover{background-color: yellow;}
-      #wordCloud{
-        height: 478px;
-        width: 700px;
-    }
-
-
-    </style>
   </head>
-  <body>
-   <section class="min-vh-100 d-flex align-items-center" style="background-color: #A22C29;">
-     <div class="row w-100 d-flex justify-content-center min-vh-100">
-      <div class="display-3 text-center text-white">TRY 1</div>
-       <div class="col-lg-12 text-center">
-        <div id="myCanvasContainer">
-          <canvas id="myCanvas" width="800" height="500">
-            <p>Anything in here will be replaced on browsers that support the canvas element</p>
-          </canvas>
+  <body data-spy="scroll" data-offset="70" data-target="#navbar-main">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-main">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://lorenzopezzi.github.io/cv/">Lorenzo Pezzi</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://lorenzopezzi.github.io/cv/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#progetti">Progetti</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="tags" style="display: none;">
-          <ul>
-            <li><a href="" class="prova" style="color: #0A100D; font-size: 40px;">Database</a></li>
-            <li><a href="" style="color: #0A100D; font-size: 40px;">ER Model</a></li>
-            <li><a href="" style="color: #D6D5C9; font-size: 40px;" class="prova" >Java</a></li>
-            <li><a href="" style="color: white; font-size: 35px;">Javascript</a></li>
-            <li><a href="" style="color: white; font-size: 25px;">Python</a></li>
-            <li><a href="" style="color: #B9BAA3; font-size: 40px;">HTML</a></li>
-            <li><a href="" style="color: #B9BAA3; font-size: 40px;">CSS</a></li>
-            <li><a href="" style="color: #B9BAA3; font-size: 30px;">MVC</a></li>
-            <li><a href="" style="color: #B9BAA3; font-size: 40px;">Bootstrap</a></li>
-            <li><a href="" style="color: #0A100D; font-size: 40px;">SQL</a></li>
-            <li><a href="" class="prova" style="color: #0A100D; font-size: 40px;">Database</a></li>
-            <li><a href="" style="color: #0A100D; font-size: 40px;">ER Model</a></li>
-            <li><a href="" style="color: #D6D5C9; font-size: 40px;" class="prova" >Java</a></li>
-            <li><a href="" style="color: white; font-size: 35px;">Javascript</a></li>
-            <li><a href="" style="color: white; font-size: 25px;">Python</a></li>
+      </nav>
 
-          </ul>
+
+    <section id="biografia" class="min-vh-100" >
+            <div class="row w-100 m-0 min-vh-100">
+                <div class="col-12 col-lg-4 left-col">
+                    <div id="bio" class="text-center">
+                        <img src="https://i.imgur.com/PH5y8F1.jpg" alt="Lorenzo Pezzi" class="profile-img img-flex">
+                        <div id="text-bio" class="">
+                            <h2 class="mt-5 text-white">Lorenzo Pezzi</h2>
+                            <h4 class="subtitle">Junior Java Developer</h4>
+                            <div id="f-icon" class="mt-5 my-auto text-center"> 
+                                <p class="text-white"> <i class="fas fa-envelope"></i> lorenzo.pezzi94@gmail.com </p>
+                                <a href="https://github.com/LorenzoPezzi"><i class="fab fa-github fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/lorenzopezzi/"><i class="fab fa-linkedin fa-2x"></i></a>
+                                <p class="display-6" style="color: #795548;"><a href="LorenzoPezzi-cv.pdf" class="cv" download><strong>CV</strong></a></p>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            
+                <div class="col-12 col-lg-8 right-col">
+                    <h1>Biografia</h1>
+                    <p>Sono da sempre appassionato di informatica e tecnologia. La cosa che più mi affascina dell'informatica è la possiblità di semplificare e migliorare azioni altrimenti lunghe e tediose, attraverso codice sempre diverso e sempre migliorabile. Questo mi spinge ad informarmi costantemente sulle possibilità di sviluppo e programmazione. Dopo aver intrapreso la carriera univeristaria ed aver lavorato per anni in un settore non inerente alla mia area di interesse, ho deciso di specializzarmi con il corso intensivo di Generation Italia per diventare uno Java Junior Developer ed entrare nel mondo del lavoro.</p>
+                    <div class="row mt-5">
+                        <div class="col-md-5">
+                            <h3>Interessi</h3>
+                            <ul class="ul-interests mt-3">
+                                <li>Automatizzazione Task</li>
+                                <li>Android App</li>
+                                <li>Scraping Dati</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-7">
+                            <h3>Formazione</h3>
+                            <ul class="fa-ul mt-3">
+                                <li>
+                                    <i class="fa-li fas fa-graduation-cap"></i>
+                                    <div class="description">
+                                        <p class="course">Corso Junior Java Developer</p>
+                                        <p class="institution">Generation Italy</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-li fas fa-graduation-cap"></i>
+                                    <div class="description">
+                                        <p class="course">Ingegneria Informatica</p>
+                                        <p class="institution">Università di Roma Tor Vergata</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="arrow" class="text-center" style="position: absolute; bottom:0;">
+                   <a href="#skills" class="text-decoration-none"><i class="fas fa-chevron-down fa-3x"></i></a>
+                </div> -->
+                    
+
+            </div>
+    </section>
+    <section id="skills">
+        <div class="row w-100 m-0">
+            <div class="col-12 col-lg-4 left-col">
+                <div id="skill" class="text-center " style="height: 100%;">
+                    <img src="https://i.imgur.com/HIq8FVf.png" alt="skill" class="img-flex">
+                    <div id="text-bio" class="">
+                        <h2 class="mt-3 text-white">Skills</h2>
+                    </div>
+                </div>    
+            </div>
+        
+            <div class="col-12 col-lg-8 right-col2">
+                <div class="row featurette text-center">
+                    <div class="col-12 col-sm-4">
+                        <div class="featurette-icon"><i class="fab fa-java fa-5x"></i></div>
+                        <h3>Java</h3>
+                        <p>WebApplication, Servlet, Rest API, JUnit</p>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="featurette-icon"><i class="fab fa-html5 fa-5x"></i></div>
+                        <h3>Html - Css</h3>
+                        <p>Bootstrap</p>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="featurette-icon"><i class="fab fa-js fa-5x"></i></div>
+                        <h3>Javascript</h3>
+                        <p>Firebase, axios</p>
+                    </div>
+                </div>
+                <div class="row featurette text-center mt-5">   
+                    <div class="col-12 col-sm-4">
+                        <div class="featurette-icon"><i class="fab fa-python fa-5x"></i></div>
+                        <h3>Python</h3>
+                        <p>Selenium, BeautifulSoup, Telethon, InstaPy</p>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="featurette-icon"><i class="fas fa-database fa-5x"></i></div>
+                        <h3>Database</h3>
+                        <p> ER Model, MySQL, MongoDB</p>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="featurette-icon"><i class="fab fa-node-js fa-5x"></i></div>
+                        <h3>NodeJS</h3>
+                        <p>Express</p>
+                    </div>
+                </div>
+            </div>
         </div>
-       </div>
+    </section>
+<section id="progetti">
+    <div class="row w-100 m-0">
+        <div class="col-12 col-lg-4 left-col">
+            <div id="project" class="text-center" style="height: 100%;">
+                <img src="https://i.imgur.com/28BfaGs.png" alt="skill" class="img-flex">
+                <div id="text-bio" class="">
+                    <h2 class="mt-3 text-white">Progetti</h2>
+                </div>
+            </div>    
+        </div>
+    
+        <div class="col-12 col-lg-8 right-col">
+            <div class="row text-center mt-2 mb-5">   
+                <div class="profile-card-4 text-center"><img src="https://i.imgur.com/e453BHT.png" class=" p-img2">
+                    <div class="profile-content">
+                        
+                        <div class="profile-description">
+                            <div class="">
+                                <h3 class="text-bold">Blog Java WebApp</h3>
+                                <p class="text-dark">In sviluppo</p>
+                            </div>
+                            Progetto di una Web Application che riproduce tutte le maggiori funzionalità di un blog,
+                            tramite l'uso di TomCat,Servlet,JSP lato Server e Javascript lato Client. Segui il progetto su <a href="https://github.com/LorenzoPezzi/Blog1.0">Github</a>
+                            <p class="mt-2"><i class="fab fa-js fa-2x"></i>
+                            <i class="fab fa-html5 fa-2x"></i>
+                            <i class="fab fa-java fa-2x"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card-4 text-center"><img src="https://i.imgur.com/cpXgCbQ.png" class=" p-img2">
+                    <div class="profile-content">
+                        <div class="profile-description">
+                            <div class="">
+                                <h3 class="text-bold">ToDo List</h3>
+                                <p class="text-dark">Test</p>
+                            </div>
+                            Progetto test per NodeJS, Express e Mongoose. Principali funzionalità di un server Express
+                            con collegamento ad un DB NoSQL per il mantenimento dei dati. Gestione dinamica delle root per liste personalizzate.
+                            <p class="met-2">
+                                <i class="fab fa-js fa-2x"></i>
+                                <i class="fab fa-node-js fa-2x"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card-4 text-center"><img src="https://i.imgur.com/pfOF1KZ.png" class=" p-img">
+                    <div class="profile-content">
+                        <div class="profile-description">
+                            <div class="">
+                                <h3 class="text-bold">Blog JS</h3>
+                                <p class="text-dark">Bozza di progetto</p>
+                            </div>
+                                Bozza per un sito internet con landing page e gestione non rifinita di un Blog in JS e Firebase.
+                                Funzionalità CRUD.
+                                <p class="mt-2">
+                                    <i class="fab fa-html5 fa-2x"></i>
+                                    <i class="fab fa-js fa-2x"></i> 
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="profile-card-4 text-center"><img src="https://i.imgur.com/JSwJagF.png" class=" p-img">
+                    <div class="profile-content">
+                        <div class="profile-description">
+                            <div class="">
+                                <h3 class="text-bold">Web Page</h3>
+                                <p class="text-dark">Bozza di progetto</p>
+                            </div>
+                                Bozza per un sito internet con landing page e gestione realtime di punteggi e classifiche.
+                                Script Python (BS) su server per prelievo punteggi e classifiche. PHP utilizzato per lettura di file generati da Python
+                                e creare dinamicamente porzioni della pagina in base ai dati.
+                                <p class="mt-2">
+                                    <i class="fab fa-html5 fa-2x"></i>
+                                    <i class="fab fa-python fa-2x"></i>
+                                    <i class="fab fa-php fa-2x"></i> 
+                                </p>
+                            </div>
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
+    <footer>
+        <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2 w-100">
+            <div class="col-12">
+                <div class="row my-4 row-1 no-gutters">
+                    <div class="col-12 col-auto text-center"><small>&#9400; Lorenzo Pezzi - 2021</small></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 
-  <section class="min-vh-100 d-flex align-items-center" style="background-color: black;">
-   
-    <div class="row w-100 d-flex justify-content-center">
-      <p class="display-3 text-center text-white">TRY 2</p>
-      <div class="col-lg-8 d-flex justify-content-center">
-       <div id="wordCloud"></div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-      let intViewportWidth = window.innerWidth;
-      let intViewportHeight = window.innerHeight;
-      document.getElementById('myCanvas').width = intViewportWidth/1.2;
-      document.getElementById('myCanvas').height = intViewportHeight;
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-</body></html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
